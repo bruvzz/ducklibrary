@@ -226,7 +226,7 @@ function lib:Window(text, preset, closebind)
         local NotificationDesc = Instance.new("TextLabel")
 
         NotificationHold.Name = "NotificationHold"
-        NotificationHold.Parent = Main
+        NotificationHold.Parent = ducklib
         NotificationHold.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         NotificationHold.BackgroundTransparency = 1.000
         NotificationHold.BorderSizePixel = 0
