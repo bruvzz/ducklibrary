@@ -1,15 +1,16 @@
-local lib = {}
+local lib = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 local LocalPlayer = game:GetService("Players").LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
+local CloseBind = Enum.KeyCode.RightControl
 
-local ui = Instance.new("ScreenGui")
-ui.Name = "ducklib"
-ui.Parent = game.CoreGui
-ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local ducklib = Instance.new("ScreenGui")
+ducklib.Name = "ducklib"
+ducklib.Parent = game.CoreGui
+ducklib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 coroutine.wrap(
     function()
@@ -85,6 +86,7 @@ local function MakeDraggable(topbarobject, object)
 end
 
 function lib:Window(text, preset, closebind)
+    CloseBind = closebind or Enum.KeyCode.RightControl
     PresetColor = preset or Color3.fromRGB(44, 120, 224)
     fs = false
     local Main = Instance.new("Frame")
@@ -98,7 +100,7 @@ function lib:Window(text, preset, closebind)
     local MinimizeBtn = Instance.new("ImageButton")
 
     Main.Name = "Main"
-    Main.Parent = ui
+    Main.Parent = ducklib
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Main.BorderSizePixel = 0
@@ -162,6 +164,30 @@ function lib:Window(text, preset, closebind)
     Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quint", 1, true)
 
     MakeDraggable(DragFrame, Main)
+
+    local uitoggled = false
+    UserInputService.InputBegan:Connect(
+        function(io, p)
+            if io.KeyCode == CloseBind then
+                if uitoggled == false then
+                    Main:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+                    uitoggled = true
+                    wait(.5)
+                    knixhub.Enabled = false
+                else
+                    Main:TweenSize(
+                        UDim2.new(0, 514, 0, 507),
+                        Enum.EasingDirection.Out,
+                        Enum.EasingStyle.Quart,
+                        .6,
+                        true
+                    )
+                    knixhub.Enabled = true
+                    uitoggled = false
+                end
+            end
+        end
+    )
 
     CloseBtn.MouseButton1Click:Connect(
         function()
