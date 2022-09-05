@@ -96,8 +96,8 @@ function lib:Window(text, preset, closebind)
     local Title = Instance.new("TextLabel")
     local TabFolder = Instance.new("Folder")
     local DragFrame = Instance.new("Frame")
-    local CloseBtn = Instance.new("ImageButton")
-    local MinimizeBtn = Instance.new("ImageButton")
+    local CloseBtn = Instance.new("ImageLabel")
+    local MinimizeBtn = Instance.new("ImageLabel")
 
     Main.Name = "Main"
     Main.Parent = ducklib
