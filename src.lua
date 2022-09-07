@@ -278,6 +278,7 @@ function lib:Window(text, preset, closebind)
     local tabhold = {}
     function tabhold:Tab(text)
         local TabBtn = Instance.new("TextButton")
+        local TabTitle = Instance.new("TextLabel")
         local TabBtnCorner = Instance.new("UICorner")
 
         TabBtn.Name = "TabBtn"
@@ -285,11 +286,22 @@ function lib:Window(text, preset, closebind)
         TabBtn.BackgroundColor3 = PresetColor
         TabBtn.AutoButtonColor = false
         TabBtn.BackgroundTransparency = 0
-        TabBtn.Size = UDim2.new(0, 107, 0, 21)
+        TabBtn.Size = UDim2.new(0, 156, 0, 37)
         TabBtn.Font = Enum.Font.Gotham
         TabBtn.Text = ""
         TabBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
         TabBtn.TextSize = 14.000
+
+        TabTitle.Name = "TabTitle"
+        TabTitle.Parent = TabBtn
+        TabTitle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+        TabTitle.BackgroundTransparency = 0
+        TabTitle.Size = UDim2.new(0, 156, 0, 37)
+        TabTitle.Font = Enum.Font.Gotham
+        TabTitle.Text = text
+        TabTitle.TextColor3 = Color3.fromRGB(75, 75, 75)
+        TabTitle.TextSize = 19.000
+        TabTitle.TextXAlignment = Enum.TextXAlignment.Center
 
         TabBtnCorner.CornerRadius = UDim.new(0, 4)
         TabBtnCorner.Name = "TabBtnCorner"
@@ -332,28 +344,28 @@ function lib:Window(text, preset, closebind)
                 for i, v in next, TabHold:GetChildren() do
                     if v.Name == "TabBtn" then
                         TweenService:Create(
-                            v.TabBtn,
+                            v.TabTitle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TabBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)}
+                            {BackgroundColor3 = Color3.fromRGB(30, 30, 30)}
                         ):Play()
                         TweenService:Create(
-                            TabBtn,
+                            TabTitle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TabBtn.BackgroundColor3 = PresetColor}
+                            {BackgroundColor3 = PresetColor}
                         ):Play()
                     end
                 end
                 for i, v in next, TabHold:GetChildren() do
                     if v.Name == "TabBtn" then
                         TweenService:Create(
-                            v.TabBtn,
+                            v.TabTitle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TabBtn.TextColor3 = Color3.fromRGB(75, 75, 75)}
+                            {TextColor3 = Color3.fromRGB(75, 75, 75)}
                         ):Play()
                         TweenService:Create(
-                            TabBtn,
+                            TabTitle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TabBtn.TextColor3 = Color3.fromRGB(255, 255, 255)}
+                            {TextColor3 = Color3.fromRGB(255, 255, 255)}
                         ):Play()
                     end
                 end
