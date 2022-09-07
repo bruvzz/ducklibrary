@@ -332,28 +332,28 @@ function lib:Window(text, preset, closebind)
                 for i, v in next, TabHold:GetChildren() do
                     if v.Name == "TabBtn" then
                         TweenService:Create(
-                            v.TabBtn.BackgroundColor3,
+                            v.TabBtn,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(30, 30, 30)}
+                            {TabBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)}
                         ):Play()
                         TweenService:Create(
-                            TabBtn.BackgroundColor3,
+                            TabBtn,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = PresetColor}
+                            {TabBtn.BackgroundColor3 = PresetColor}
                         ):Play()
                     end
                 end
                 for i, v in next, TabHold:GetChildren() do
                     if v.Name == "TabBtn" then
                         TweenService:Create(
-                            v.TabBtn.Text,
+                            v.TabBtn,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TextColor3 = Color3.fromRGB(75, 75, 75)}
+                            {TabBtn.TextColor3 = Color3.fromRGB(75, 75, 75)}
                         ):Play()
                         TweenService:Create(
-                            TabBtn.Text,
+                            TabBtn,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {TextColor3 = Color3.fromRGB(255, 255, 255)}
+                            {TabBtn.TextColor3 = Color3.fromRGB(255, 255, 255)}
                         ):Play()
                     end
                 end
