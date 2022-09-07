@@ -449,7 +449,7 @@ function lib:Window(text, preset, closebind)
                 function()
                     TweenService:Create(
                         Button,
-                        TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out, 0, true),
+                        TweenInfo.new(.2, "Quad", "Out", 0, true),
                         {BackgroundColor3 = PresetColor}
                     ):Play()
                 end
