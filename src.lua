@@ -445,16 +445,6 @@ function lib:Window(text, preset, closebind)
                 end
             )
 
-            Button.MouseButton1Up:Connect(
-                function()
-                    TweenService:Create(
-                        Button,
-                        TweenInfo.new(.2, "Quad", "Out", 0, true),
-                        {BackgroundColor3 = PresetColor}
-                    ):Play()
-                end
-            )
-
             MinimizeBtn.MouseButton1Click:Connect(function()
                 if Button.Visible == true then
                     Button.Visible = false
