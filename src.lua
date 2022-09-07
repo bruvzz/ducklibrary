@@ -96,8 +96,8 @@ function lib:Window(text, preset, closebind)
     local Title = Instance.new("TextLabel")
     local TabFolder = Instance.new("Folder")
     local DragFrame = Instance.new("Frame")
-    local CloseBtn = Instance.new("ImageLabel")
-    local MinimizeBtn = Instance.new("ImageLabel")
+    local CloseBtn = Instance.new("ImageButton")
+    local MinimizeBtn = Instance.new("ImageButton")
 
     Main.Name = "Main"
     Main.Parent = ducklib
@@ -219,30 +219,10 @@ function lib:Window(text, preset, closebind)
     end
 
     function lib:Notification(texttitle, textdesc, textbtn)
-        local NotificationHold = Instance.new("TextButton")
         local NotificationFrame = Instance.new("Frame")
         local OkayBtn = Instance.new("ImageButton")
         local NotificationTitle = Instance.new("TextLabel")
         local NotificationDesc = Instance.new("TextLabel")
-
-        NotificationHold.Name = "NotificationHold"
-        NotificationHold.Parent = Main
-        NotificationHold.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-        NotificationHold.BackgroundTransparency = 1.000
-        NotificationHold.BorderSizePixel = 0
-        NotificationHold.Size = UDim2.new(0, 547, 0, 391)
-        NotificationHold.AutoButtonColor = false
-        NotificationHold.Font = Enum.Font.Gotham
-        NotificationHold.Text = ""
-        NotificationHold.TextColor3 = Color3.fromRGB(0, 0, 0)
-        NotificationHold.TextSize = 14.000
-
-        TweenService:Create(
-            NotificationHold,
-            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-            {BackgroundTransparency = 0.7}
-        ):Play()
-        wait(0.4)
 
         NotificationFrame.Name = "NotificationFrame"
         NotificationFrame.Parent = ducklib
@@ -251,12 +231,7 @@ function lib:Window(text, preset, closebind)
         NotificationFrame.ClipsDescendants = true
         NotificationFrame.Position = UDim2.new(0.841, 0, 0.843, 0)
 
-        TweenService:Create(
-            NotificationFrame,
-            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-            {BackgroundTransparency = 0}
-        ):Play()
-        wait(1)
+        NotificationFrame:TweenPosition(UDim2.new(0.840, 0, 0.875, 0), "Out", "Sine", .3, true)
 
         OkayBtn.Name = "OkayBtn"
         OkayBtn.Parent = NotificationFrame
@@ -295,19 +270,7 @@ function lib:Window(text, preset, closebind)
 
         OkayBtn.MouseButton1Click:Connect(
             function()
-                game.CoreGui:FindFirstChild("NotificationFrame"):Destroy()
-
-                wait(0.4)
-
-                TweenService:Create(
-                    NotificationHold,
-                    TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                    {BackgroundTransparency = 1}
-                ):Play()
-
-                wait(.3)
-
-                NotificationHold:Destroy()
+                NotificationFrame:Destroy()
             end
         )
     end
