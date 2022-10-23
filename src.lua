@@ -133,9 +133,9 @@ function lib:Window(text, preset, closebind)
     TabHoldLayout.Padding = UDim.new(0, 8)
 
     Title.Name = "Title"
-    Title.Parent = Main
-    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Title.BackgroundTransparency = 1.000
+    Title.Parent = DragFrame
+    Title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    Title.BackgroundTransparency = 0
     Title.Position = UDim2.new(0.024, 0, 0, 0)
     Title.Size = UDim2.new(0, 458, 0, 31)
     Title.Font = Enum.Font.GothamSemibold
@@ -1482,7 +1482,7 @@ function lib:Window(text, preset, closebind)
 
             Label.Name = "Button"
             Label.Parent = Tab
-            Label.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Label.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             Label.Size = UDim2.new(0, 379, 0, 42)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.SourceSans
