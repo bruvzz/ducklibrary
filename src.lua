@@ -130,7 +130,7 @@ function lib:Window(text, preset, closebind)
     TabHoldLayout.Name = "TabHoldLayout"
     TabHoldLayout.Parent = TabHold
     TabHoldLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    TabHoldLayout.Padding = UDim.new(0, 13)
+    TabHoldLayout.Padding = UDim.new(0, 8)
 
     Title.Name = "Title"
     Title.Parent = Main
@@ -316,7 +316,7 @@ function lib:Window(text, preset, closebind)
         TabTitle.Font = Enum.Font.Gotham
         TabTitle.Text = text
         TabTitle.TextColor3 = Color3.fromRGB(75, 75, 75)
-        TabTitle.TextSize = 14.000
+        TabTitle.TextSize = 17.000
         TabTitle.TextXAlignment = Enum.TextXAlignment.Center
 
         TabTitleCorner.CornerRadius = UDim.new(0, 5)
