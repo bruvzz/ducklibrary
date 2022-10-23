@@ -136,6 +136,7 @@ function lib:Window(text, preset, closebind)
     Title.Parent = DragFrame
     Title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Title.BackgroundTransparency = 0
+    Title.BorderSizePixel = 0
     Title.Position = UDim2.new(0.024, 0, 0, 0)
     Title.Size = UDim2.new(0, 458, 0, 31)
     Title.Font = Enum.Font.GothamSemibold
@@ -299,7 +300,7 @@ function lib:Window(text, preset, closebind)
 
         TabBtn.Name = "TabBtn"
         TabBtn.Parent = TabHold
-        TabBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+        TabBtn.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
         TabBtn.AutoButtonColor = false
         TabBtn.BackgroundTransparency = 1
         TabBtn.Size = UDim2.new(0, 156, 0, 37)
@@ -310,7 +311,7 @@ function lib:Window(text, preset, closebind)
 
         TabTitle.Name = "TabTitle"
         TabTitle.Parent = TabBtn
-        TabTitle.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+        TabTitle.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
         TabTitle.BackgroundTransparency = 0
         TabTitle.Size = UDim2.new(0, 107, 0, 21)
         TabTitle.Position = UDim2.new(0.154, 0, 0.216, 0)
@@ -330,7 +331,7 @@ function lib:Window(text, preset, closebind)
         Tab.Name = "Tab"
         Tab.Parent = TabFolder
         Tab.Active = true
-        Tab.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+        Tab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         Tab.BackgroundTransparency = 1.000
         Tab.BorderSizePixel = 0
         Tab.Position = UDim2.new(0.285, 0, 0.079, 0)
@@ -399,7 +400,7 @@ function lib:Window(text, preset, closebind)
 
             Button.Name = "Button"
             Button.Parent = Tab
-            Button.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            Button.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Button.Size = UDim2.new(0, 379, 0, 42)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.SourceSans
@@ -438,7 +439,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(31, 31, 31)}
+                        {BackgroundColor3 = Color3.fromRGB(33, 33, 33)}
                     ):Play()
                 end
             )
@@ -476,7 +477,7 @@ function lib:Window(text, preset, closebind)
 
             Toggle.Name = "Toggle"
             Toggle.Parent = Tab
-            Toggle.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            Toggle.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Toggle.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
             Toggle.Size = UDim2.new(0, 379, 0, 42)
             Toggle.AutoButtonColor = false
@@ -512,7 +513,7 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle2.Name = "FrameToggle2"
             FrameToggle2.Parent = FrameToggle1
-            FrameToggle2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            FrameToggle2.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             FrameToggle2.Position = UDim2.new(0.0489999987, 0, 0.0930000022, 0)
             FrameToggle2.Size = UDim2.new(0, 33, 0, 14)
 
@@ -584,7 +585,7 @@ function lib:Window(text, preset, closebind)
                         TweenService:Create(
                             Toggle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(31, 31, 31)}
+                            {BackgroundColor3 = Color3.fromRGB(33, 33, 33)}
                         ):Play()
                         TweenService:Create(
                             FrameToggle1,
@@ -677,7 +678,7 @@ function lib:Window(text, preset, closebind)
 
             Slider.Name = "Slider"
             Slider.Parent = Tab
-            Slider.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            Slider.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Slider.Position = UDim2.new(-0.48035714, 0, -0.570532918, 0)
             Slider.Size = UDim2.new(0, 379, 0, 60)
             Slider.AutoButtonColor = false
@@ -813,7 +814,7 @@ function lib:Window(text, preset, closebind)
 
             Dropdown.Name = "Dropdown"
             Dropdown.Parent = Tab
-            Dropdown.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            Dropdown.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Dropdown.ClipsDescendants = true
             Dropdown.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Dropdown.Size = UDim2.new(0, 379, 0, 42)
@@ -848,7 +849,7 @@ function lib:Window(text, preset, closebind)
             ArrowImg.Parent = DropdownTitle
             ArrowImg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ArrowImg.BackgroundTransparency = 1.000
-            ArrowImg.Position = UDim2.new(1.65240645, 0, 0.190476194, 0)
+            ArrowImg.Position = UDim2.new(0.908, 0, 0.190476194, 0)
             ArrowImg.Size = UDim2.new(0, 26, 0, 26)
             ArrowImg.Image = "http://www.roblox.com/asset/?id=6034818375"
 
