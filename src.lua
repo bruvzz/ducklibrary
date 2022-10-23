@@ -316,7 +316,7 @@ function lib:Window(text, preset, closebind)
         TabTitle.Font = Enum.Font.Gotham
         TabTitle.Text = text
         TabTitle.TextColor3 = Color3.fromRGB(75, 75, 75)
-        TabTitle.TextSize = 19.000
+        TabTitle.TextSize = 14.000
         TabTitle.TextXAlignment = Enum.TextXAlignment.Center
 
         TabTitleCorner.CornerRadius = UDim.new(0, 5)
