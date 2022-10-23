@@ -881,7 +881,7 @@ function lib:Window(text, preset, closebind)
                         TweenService:Create(
                             ArrowImg,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {Rotation = 270}
+                            {Rotation = -90}
                         ):Play()
                         wait(.2)
                         Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
@@ -955,7 +955,7 @@ function lib:Window(text, preset, closebind)
                         DropdownTitle.Text = text .. " - " .. v
                         pcall(callback, v)
                         Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 42),
+                            UDim2.new(0, 379, 0, 42),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
