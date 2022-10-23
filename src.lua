@@ -140,8 +140,8 @@ function lib:Window(text, preset, closebind)
     Title.Size = UDim2.new(0, 458, 0, 31)
     Title.Font = Enum.Font.GothamSemibold
     Title.Text = text
-    Title.TextColor3 = Color3.fromRGB(90, 90, 90)
-    Title.TextSize = 20.000
+    Title.TextColor3 = Color3.fromRGB(225, 225, 225)
+    Title.TextSize = 15.000
     Title.ClipsDescendants = true
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -208,7 +208,7 @@ function lib:Window(text, preset, closebind)
     )
 
     MinimizeBtn.MouseButton1Click:Connect(function()
-        if Main.Size ~= UDim2.new(0, 514, 0, 24) then
+        if Main.Size ~= UDim2.new(0, 547, 0, 507) then
             Main:TweenSize(UDim2.new(0, 547, 0, 32), "Out", "Quad", 0.25, true);
         else
             Main:TweenSize(UDim2.new(0, 547, 0, 507), "Out", "Quad", 0.25, true);
