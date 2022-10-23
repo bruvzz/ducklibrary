@@ -103,7 +103,7 @@ function lib:Window(text, preset, closebind)
     Main.Name = "Main"
     Main.Parent = ui
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
-    Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    Main.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
     Main.BorderSizePixel = 0
     Main.Position = UDim2.new(0.5, 0, 0, 0)
     Main.Size = UDim2.new(0, 547, 0, 391)
@@ -147,8 +147,8 @@ function lib:Window(text, preset, closebind)
 
     DragFrame.Name = "DragFrame"
     DragFrame.Parent = Main
-    DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    DragFrame.BackgroundTransparency = 1.000
+    DragFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    DragFrame.BackgroundTransparency = 0
     DragFrame.Size = UDim2.new(0, 547, 0, 32)
 
     CloseBtn.Name = "CloseBtn"
@@ -310,9 +310,10 @@ function lib:Window(text, preset, closebind)
 
         TabTitle.Name = "TabTitle"
         TabTitle.Parent = TabBtn
-        TabTitle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+        TabTitle.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
         TabTitle.BackgroundTransparency = 0
         TabTitle.Size = UDim2.new(0, 107, 0, 21)
+        TabTitle.Position = UDim2.new(0.154, 0, 0.216, 0)
         TabTitle.Font = Enum.Font.Gotham
         TabTitle.Text = text
         TabTitle.TextColor3 = Color3.fromRGB(75, 75, 75)
@@ -329,7 +330,7 @@ function lib:Window(text, preset, closebind)
         Tab.Name = "Tab"
         Tab.Parent = TabFolder
         Tab.Active = true
-        Tab.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+        Tab.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
         Tab.BackgroundTransparency = 1.000
         Tab.BorderSizePixel = 0
         Tab.Position = UDim2.new(0.285, 0, 0.079, 0)
@@ -398,7 +399,7 @@ function lib:Window(text, preset, closebind)
 
             Button.Name = "Button"
             Button.Parent = Tab
-            Button.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Button.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             Button.Size = UDim2.new(0, 379, 0, 42)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.SourceSans
@@ -427,7 +428,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = 60, 60, 60}
+                        {BackgroundColor3 = 40, 40, 40}
                     ):Play()
                 end
             )
@@ -437,7 +438,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(34, 34, 34)}
+                        {BackgroundColor3 = Color3.fromRGB(31, 31, 31)}
                     ):Play()
                 end
             )
@@ -475,7 +476,7 @@ function lib:Window(text, preset, closebind)
 
             Toggle.Name = "Toggle"
             Toggle.Parent = Tab
-            Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Toggle.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             Toggle.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
             Toggle.Size = UDim2.new(0, 379, 0, 42)
             Toggle.AutoButtonColor = false
@@ -511,7 +512,7 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle2.Name = "FrameToggle2"
             FrameToggle2.Parent = FrameToggle1
-            FrameToggle2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            FrameToggle2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             FrameToggle2.Position = UDim2.new(0.0489999987, 0, 0.0930000022, 0)
             FrameToggle2.Size = UDim2.new(0, 33, 0, 14)
 
@@ -550,7 +551,7 @@ function lib:Window(text, preset, closebind)
                         TweenService:Create(
                             Toggle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(37, 37, 37)}
+                            {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}
                         ):Play()
                         TweenService:Create(
                             FrameToggle1,
@@ -583,7 +584,7 @@ function lib:Window(text, preset, closebind)
                         TweenService:Create(
                             Toggle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(34, 34, 34)}
+                            {BackgroundColor3 = Color3.fromRGB(31, 31, 31)}
                         ):Play()
                         TweenService:Create(
                             FrameToggle1,
@@ -622,7 +623,7 @@ function lib:Window(text, preset, closebind)
                 TweenService:Create(
                     Toggle,
                     TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                    {BackgroundColor3 = Color3.fromRGB(37, 37, 37)}
+                    {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}
                 ):Play()
                 TweenService:Create(
                     FrameToggle1,
@@ -676,7 +677,7 @@ function lib:Window(text, preset, closebind)
 
             Slider.Name = "Slider"
             Slider.Parent = Tab
-            Slider.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Slider.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             Slider.Position = UDim2.new(-0.48035714, 0, -0.570532918, 0)
             Slider.Size = UDim2.new(0, 379, 0, 60)
             Slider.AutoButtonColor = false
@@ -812,7 +813,7 @@ function lib:Window(text, preset, closebind)
 
             Dropdown.Name = "Dropdown"
             Dropdown.Parent = Tab
-            Dropdown.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Dropdown.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             Dropdown.ClipsDescendants = true
             Dropdown.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Dropdown.Size = UDim2.new(0, 379, 0, 42)
@@ -870,7 +871,7 @@ function lib:Window(text, preset, closebind)
                 function()
                     if droptog == false then
                         Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 55 + framesize),
+                            UDim2.new(0, 379, 0, 42 + framesize),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -885,7 +886,7 @@ function lib:Window(text, preset, closebind)
                         Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
                     else
                         Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 42),
+                            UDim2.new(0, 379, 0, 42),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -1024,7 +1025,7 @@ function lib:Window(text, preset, closebind)
 
             Colorpicker.Name = "Colorpicker"
             Colorpicker.Parent = Tab
-            Colorpicker.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Colorpicker.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             Colorpicker.ClipsDescendants = true
             Colorpicker.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Colorpicker.Size = UDim2.new(0, 379, 0, 42)
@@ -1057,7 +1058,7 @@ function lib:Window(text, preset, closebind)
 
             ConfirmBtn.Name = "ConfirmBtn"
             ConfirmBtn.Parent = ColorpickerTitle
-            ConfirmBtn.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            ConfirmBtn.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             ConfirmBtn.Position = UDim2.new(1.25814295, 0, 1.09037197, 0)
             ConfirmBtn.Size = UDim2.new(0, 105, 0, 32)
             ConfirmBtn.AutoButtonColor = false
@@ -1093,7 +1094,7 @@ function lib:Window(text, preset, closebind)
 
             RainbowToggle.Name = "RainbowToggle"
             RainbowToggle.Parent = ColorpickerTitle
-            RainbowToggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            RainbowToggle.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             RainbowToggle.Position = UDim2.new(1.26349044, 0, 2.12684202, 0)
             RainbowToggle.Size = UDim2.new(0, 104, 0, 32)
             RainbowToggle.AutoButtonColor = false
@@ -1128,7 +1129,7 @@ function lib:Window(text, preset, closebind)
 
             FrameRainbowToggle2.Name = "FrameRainbowToggle2"
             FrameRainbowToggle2.Parent = FrameRainbowToggle1
-            FrameRainbowToggle2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            FrameRainbowToggle2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             FrameRainbowToggle2.Position = UDim2.new(0.0590000004, 0, 0.112999998, 0)
             FrameRainbowToggle2.Size = UDim2.new(0, 33, 0, 14)
 
@@ -1137,7 +1138,7 @@ function lib:Window(text, preset, closebind)
 
             FrameRainbowToggle3.Name = "FrameRainbowToggle3"
             FrameRainbowToggle3.Parent = FrameRainbowToggle1
-            FrameRainbowToggle3.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            FrameRainbowToggle3.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             FrameRainbowToggle3.BackgroundTransparency = 1.000
             FrameRainbowToggle3.Size = UDim2.new(0, 37, 0, 18)
 
