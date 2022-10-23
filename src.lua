@@ -147,8 +147,8 @@ function lib:Window(text, preset, closebind)
 
     DragFrame.Name = "DragFrame"
     DragFrame.Parent = Main
-    DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    DragFrame.BackgroundTransparency = 1
+    DragFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    DragFrame.BackgroundTransparency = 1.000
     DragFrame.Size = UDim2.new(0, 547, 0, 32)
 
     CloseBtn.Name = "CloseBtn"
@@ -428,7 +428,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = (40, 40, 40)}
+                        {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}
                     ):Play()
                 end
             )
