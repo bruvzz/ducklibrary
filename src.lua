@@ -152,25 +152,25 @@ function lib:Window(text, preset, closebind)
     DragFrame.Size = UDim2.new(0, 547, 0, 32)
 
     CloseBtn.Name = "CloseBtn"
-    CloseBtn.Parent = Main
+    CloseBtn.Parent = DragFrame
     CloseBtn.BackgroundTransparency = 1.000
     CloseBtn.Position = UDim2.new(0.939, 0, 0.103, 0)
     CloseBtn.Size = UDim2.new(0, 25, 0, 25)
     CloseBtn.ZIndex = 2
     CloseBtn.ImageRectOffset = Vector2.new(284, 4)
     CloseBtn.ImageRectSize = Vector2.new(24, 24)
-    CloseBtn.ClipsDescendants = true
+    CloseBtn.ClipsDescendants = false
     CloseBtn.Image = "rbxassetid://3926305904"
 
     MinimizeBtn.Name = "MinimizeBtn"
-    MinimizeBtn.Parent = Main
+    MinimizeBtn.Parent = DragFrame
     MinimizeBtn.BackgroundTransparency = 1.000
     MinimizeBtn.Position = UDim2.new(0.88, 0, 0.103, 0)
     MinimizeBtn.Size = UDim2.new(0, 25, 0, 25)
     MinimizeBtn.ZIndex = 2
     MinimizeBtn.ImageRectOffset = Vector2.new(884, 284)
     MinimizeBtn.ImageRectSize = Vector2.new(36, 36)
-    MinimizeBtn.ClipsDescendants = true
+    MinimizeBtn.ClipsDescendants = false
     MinimizeBtn.Image = "rbxassetid://3926307971"
 
     Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quint", 1, true)
