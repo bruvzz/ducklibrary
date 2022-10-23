@@ -211,7 +211,7 @@ function lib:Window(text, preset, closebind)
         if Main.Size ~= UDim2.new(0, 547, 0, 32) then
             Main:TweenSize(UDim2.new(0, 547, 0, 32), "Out", "Quad", 0.25, true);
         else
-            Main:TweenSize(UDim2.new(0, 547, 0, 507), "Out", "Quad", 0.25, true);
+            Main:TweenSize(UDim2.new(0, 547, 0, 391), "Out", "Quad", 0.25, true);
         end;
     end);
 
