@@ -300,7 +300,7 @@ function lib:Window(text, preset, closebind)
 
         TabBtn.Name = "TabBtn"
         TabBtn.Parent = TabHold
-        TabBtn.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+        TabBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         TabBtn.AutoButtonColor = false
         TabBtn.BackgroundTransparency = 1
         TabBtn.Size = UDim2.new(0, 156, 0, 37)
@@ -311,7 +311,7 @@ function lib:Window(text, preset, closebind)
 
         TabTitle.Name = "TabTitle"
         TabTitle.Parent = TabBtn
-        TabTitle.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+        TabTitle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         TabTitle.BackgroundTransparency = 0
         TabTitle.Size = UDim2.new(0, 107, 0, 21)
         TabTitle.Position = UDim2.new(0.154, 0, 0.216, 0)
@@ -849,7 +849,7 @@ function lib:Window(text, preset, closebind)
             ArrowImg.Parent = DropdownTitle
             ArrowImg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ArrowImg.BackgroundTransparency = 1.000
-            ArrowImg.Position = UDim2.new(1.850, 0, 0.190476194, 0)
+            ArrowImg.Position = UDim2.new(1.8, 0, 0.190476194, 0)
             ArrowImg.Size = UDim2.new(0, 26, 0, 26)
             ArrowImg.Image = "http://www.roblox.com/asset/?id=6034818375"
 
@@ -1483,7 +1483,7 @@ function lib:Window(text, preset, closebind)
 
             Label.Name = "Button"
             Label.Parent = Tab
-            Label.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            Label.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Label.Size = UDim2.new(0, 379, 0, 42)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.SourceSans
