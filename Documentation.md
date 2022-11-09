@@ -1,5 +1,5 @@
 # Duck Library
-Welcome to the Documentation of Duck Library, here is step-by=step guide on how to use different features with the user-interface.
+Welcome to the Documentation of Duck Library! Here is step-by-step guide on how to use different features with the user-interface.
 
 ## Creating the Library
 ```lua
