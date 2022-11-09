@@ -28,7 +28,7 @@ end)
 
 ## Create a Toggle
 ```lua
-Tab_1:Toggle('This is a Toggle', function(value)
+Tab_1:Toggle('This is a Toggle', false, function(value)
 
     print(value)
 
