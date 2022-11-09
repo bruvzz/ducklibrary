@@ -14,7 +14,7 @@ local Win = lib:Window("Your Title Here",Color3.fromRGB(44, 120, 224), Enum.KeyC
 
 ## Creating a Tab
 ```lua
-local Tab_1 = Window:Tab('Tab 1')
+local Tab_1 = Win:Tab('Tab 1')
 ```
 
 ## Create a Button
