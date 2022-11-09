@@ -1059,7 +1059,7 @@ function lib:Window(text, preset, closebind)
 
             ConfirmBtn.Name = "ConfirmBtn"
             ConfirmBtn.Parent = ColorpickerTitle
-            ConfirmBtn.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            ConfirmBtn.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
             ConfirmBtn.Position = UDim2.new(1.25814295, 0, 1.09037197, 0)
             ConfirmBtn.Size = UDim2.new(0, 105, 0, 32)
             ConfirmBtn.AutoButtonColor = false
@@ -1238,7 +1238,7 @@ function lib:Window(text, preset, closebind)
                         ColorSelection.Visible = false
                         HueSelection.Visible = false
                         Colorpicker:TweenSize(
-                            UDim2.new(0, 363, 0, 42),
+                            UDim2.new(0, 379, 0, 42),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
