@@ -30,7 +30,7 @@ end)
 ```lua
 Tab_1:Toggle('This is a Toggle', function(value)
 
-print(value)
+    print(value)
 
 end)
 ```
