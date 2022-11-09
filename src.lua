@@ -106,7 +106,7 @@ function lib:Window(text, preset, closebind)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     Main.BorderSizePixel = 0
     Main.Position = UDim2.new(0.5, 0, 0, 0)
-    Main.Size = UDim2.new(0, 514, 0, 507)
+    Main.Size = UDim2.new(0, 547, 0, 391)
     Main.ClipsDescendants = true
     Main.Visible = true
 
@@ -124,53 +124,54 @@ function lib:Window(text, preset, closebind)
     TabHold.Parent = Main
     TabHold.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     TabHold.BackgroundTransparency = 1.000
-    TabHold.Position = UDim2.new(0.016, 0, 0.082, 0)
-    TabHold.Size = UDim2.new(0, 107, 0, 452)
+    TabHold.Position = UDim2.new(0, 0, 0.072, 0)
+    TabHold.Size = UDim2.new(0, 156, 0, 361)
 
     TabHoldLayout.Name = "TabHoldLayout"
     TabHoldLayout.Parent = TabHold
     TabHoldLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    TabHoldLayout.Padding = UDim.new(0, 13)
+    TabHoldLayout.Padding = UDim.new(0, 8)
 
     Title.Name = "Title"
-    Title.Parent = Main
-    Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    Title.BackgroundTransparency = 1.000
-    Title.Position = UDim2.new(0.016, 0, 0.016, 0)
-    Title.Size = UDim2.new(0, 200, 0, 23)
+    Title.Parent = DragFrame
+    Title.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    Title.BackgroundTransparency = 0
+    Title.BorderSizePixel = 0
+    Title.Position = UDim2.new(0.024, 0, 0, 0)
+    Title.Size = UDim2.new(0, 458, 0, 31)
     Title.Font = Enum.Font.GothamSemibold
     Title.Text = text
-    Title.TextColor3 = Color3.fromRGB(90, 90, 90)
-    Title.TextSize = 20.000
+    Title.TextColor3 = Color3.fromRGB(225, 225, 225)
+    Title.TextSize = 15.000
     Title.ClipsDescendants = true
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
     DragFrame.Name = "DragFrame"
     DragFrame.Parent = Main
-    DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    DragFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     DragFrame.BackgroundTransparency = 1.000
-    DragFrame.Size = UDim2.new(0, 560, 0, 41)
+    DragFrame.Size = UDim2.new(0, 547, 0, 32)
 
     CloseBtn.Name = "CloseBtn"
-    CloseBtn.Parent = Main
+    CloseBtn.Parent = DragFrame
     CloseBtn.BackgroundTransparency = 1.000
-    CloseBtn.Position = UDim2.new(0.925, 0, 0.016, 0)
+    CloseBtn.Position = UDim2.new(0.939, 0, 0.103, 0)
     CloseBtn.Size = UDim2.new(0, 25, 0, 25)
     CloseBtn.ZIndex = 2
     CloseBtn.ImageRectOffset = Vector2.new(284, 4)
     CloseBtn.ImageRectSize = Vector2.new(24, 24)
-    CloseBtn.ClipsDescendants = true
+    CloseBtn.ClipsDescendants = false
     CloseBtn.Image = "rbxassetid://3926305904"
 
     MinimizeBtn.Name = "MinimizeBtn"
-    MinimizeBtn.Parent = Main
+    MinimizeBtn.Parent = DragFrame
     MinimizeBtn.BackgroundTransparency = 1.000
-    MinimizeBtn.Position = UDim2.new(0.870, 0, 0.016, 0)
+    MinimizeBtn.Position = UDim2.new(0.88, 0, 0.103, 0)
     MinimizeBtn.Size = UDim2.new(0, 25, 0, 25)
     MinimizeBtn.ZIndex = 2
     MinimizeBtn.ImageRectOffset = Vector2.new(884, 284)
     MinimizeBtn.ImageRectSize = Vector2.new(36, 36)
-    MinimizeBtn.ClipsDescendants = true
+    MinimizeBtn.ClipsDescendants = false
     MinimizeBtn.Image = "rbxassetid://3926307971"
 
     Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quint", 1, true)
@@ -188,7 +189,7 @@ function lib:Window(text, preset, closebind)
                     knixhub.Enabled = false
                 else
                     Main:TweenSize(
-                        UDim2.new(0, 514, 0, 507),
+                        UDim2.new(0, 547, 0, 391),
                         Enum.EasingDirection.Out,
                         Enum.EasingStyle.Quart,
                         .6,
@@ -208,10 +209,10 @@ function lib:Window(text, preset, closebind)
     )
 
     MinimizeBtn.MouseButton1Click:Connect(function()
-        if Main.Size ~= UDim2.new(0, 514, 0, 24) then
-            Main:TweenSize(UDim2.new(0, 514, 0, 24), "Out", "Quad", 0.25, true);
+        if Main.Size ~= UDim2.new(0, 547, 0, 32) then
+            Main:TweenSize(UDim2.new(0, 547, 0, 32), "Out", "Quad", 0.25, true);
         else
-            Main:TweenSize(UDim2.new(0, 514, 0, 507), "Out", "Quad", 0.25, true);
+            Main:TweenSize(UDim2.new(0, 547, 0, 391), "Out", "Quad", 0.25, true);
         end;
     end);
 
@@ -299,24 +300,25 @@ function lib:Window(text, preset, closebind)
 
         TabBtn.Name = "TabBtn"
         TabBtn.Parent = TabHold
-        TabBtn.BackgroundColor3 = PresetColor
+        TabBtn.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         TabBtn.AutoButtonColor = false
         TabBtn.BackgroundTransparency = 1
-        TabBtn.Size = UDim2.new(0, 107, 0, 21)
+        TabBtn.Size = UDim2.new(0, 156, 0, 37)
         TabBtn.Font = Enum.Font.SourceSans
         TabBtn.Text = ""
         TabBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-        TabBtn.TextSize = 14.000
+        TabBtn.TextSize = 16.000
 
         TabTitle.Name = "TabTitle"
         TabTitle.Parent = TabBtn
         TabTitle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         TabTitle.BackgroundTransparency = 0
         TabTitle.Size = UDim2.new(0, 107, 0, 21)
+        TabTitle.Position = UDim2.new(0.154, 0, 0.216, 0)
         TabTitle.Font = Enum.Font.Gotham
         TabTitle.Text = text
         TabTitle.TextColor3 = Color3.fromRGB(75, 75, 75)
-        TabTitle.TextSize = 19.000
+        TabTitle.TextSize = 17.000
         TabTitle.TextXAlignment = Enum.TextXAlignment.Center
 
         TabTitleCorner.CornerRadius = UDim.new(0, 5)
@@ -329,11 +331,11 @@ function lib:Window(text, preset, closebind)
         Tab.Name = "Tab"
         Tab.Parent = TabFolder
         Tab.Active = true
-        Tab.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+        Tab.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
         Tab.BackgroundTransparency = 1.000
         Tab.BorderSizePixel = 0
-        Tab.Position = UDim2.new(0.249, 0, 0.081, 0)
-        Tab.Size = UDim2.new(0, 373, 0, 452)
+        Tab.Position = UDim2.new(0.285, 0, 0.079, 0)
+        Tab.Size = UDim2.new(0, 381, 0, 360)
         Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
         Tab.ScrollBarThickness = 3
         Tab.Visible = false
@@ -356,20 +358,6 @@ function lib:Window(text, preset, closebind)
                         v.Visible = false
                     end
                     Tab.Visible = true
-                end
-                for i, v in next, TabHold:GetChildren() do
-                    if v.Name == "TabBtn" then
-                        TweenService:Create(
-                            v.TabTitle,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(30, 30, 30)}
-                        ):Play()
-                        TweenService:Create(
-                            TabTitle,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = PresetColor}
-                        ):Play()
-                    end
                 end
                 for i, v in next, TabHold:GetChildren() do
                     if v.Name == "TabBtn" then
@@ -412,8 +400,8 @@ function lib:Window(text, preset, closebind)
 
             Button.Name = "Button"
             Button.Parent = Tab
-            Button.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-            Button.Size = UDim2.new(0, 363, 0, 42)
+            Button.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+            Button.Size = UDim2.new(0, 379, 0, 42)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.SourceSans
             Button.Text = ""
@@ -428,7 +416,7 @@ function lib:Window(text, preset, closebind)
             ButtonTitle.Parent = Button
             ButtonTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ButtonTitle.BackgroundTransparency = 1.000
-            ButtonTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
+            ButtonTitle.Position = UDim2.new(0.037, 0, 0, 0)
             ButtonTitle.Size = UDim2.new(0, 187, 0, 42)
             ButtonTitle.Font = Enum.Font.Gotham
             ButtonTitle.Text = text
@@ -441,7 +429,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = PresetColor}
+                        {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}
                     ):Play()
                 end
             )
@@ -451,7 +439,7 @@ function lib:Window(text, preset, closebind)
                     TweenService:Create(
                         Button,
                         TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                        {BackgroundColor3 = Color3.fromRGB(34, 34, 34)}
+                        {BackgroundColor3 = Color3.fromRGB(33, 33, 33)}
                     ):Play()
                 end
             )
@@ -489,9 +477,9 @@ function lib:Window(text, preset, closebind)
 
             Toggle.Name = "Toggle"
             Toggle.Parent = Tab
-            Toggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Toggle.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Toggle.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
-            Toggle.Size = UDim2.new(0, 363, 0, 42)
+            Toggle.Size = UDim2.new(0, 379, 0, 42)
             Toggle.AutoButtonColor = false
             Toggle.Font = Enum.Font.SourceSans
             Toggle.Text = ""
@@ -506,7 +494,7 @@ function lib:Window(text, preset, closebind)
             ToggleTitle.Parent = Toggle
             ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ToggleTitle.BackgroundTransparency = 1.000
-            ToggleTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
+            ToggleTitle.Position = UDim2.new(0.037, 0, 0, 0)
             ToggleTitle.Size = UDim2.new(0, 187, 0, 42)
             ToggleTitle.Font = Enum.Font.Gotham
             ToggleTitle.Text = text
@@ -525,7 +513,7 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle2.Name = "FrameToggle2"
             FrameToggle2.Parent = FrameToggle1
-            FrameToggle2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            FrameToggle2.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             FrameToggle2.Position = UDim2.new(0.0489999987, 0, 0.0930000022, 0)
             FrameToggle2.Size = UDim2.new(0, 33, 0, 14)
 
@@ -564,7 +552,7 @@ function lib:Window(text, preset, closebind)
                         TweenService:Create(
                             Toggle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(37, 37, 37)}
+                            {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}
                         ):Play()
                         TweenService:Create(
                             FrameToggle1,
@@ -597,7 +585,7 @@ function lib:Window(text, preset, closebind)
                         TweenService:Create(
                             Toggle,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {BackgroundColor3 = Color3.fromRGB(34, 34, 34)}
+                            {BackgroundColor3 = Color3.fromRGB(33, 33, 33)}
                         ):Play()
                         TweenService:Create(
                             FrameToggle1,
@@ -636,7 +624,7 @@ function lib:Window(text, preset, closebind)
                 TweenService:Create(
                     Toggle,
                     TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                    {BackgroundColor3 = Color3.fromRGB(37, 37, 37)}
+                    {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}
                 ):Play()
                 TweenService:Create(
                     FrameToggle1,
@@ -690,9 +678,9 @@ function lib:Window(text, preset, closebind)
 
             Slider.Name = "Slider"
             Slider.Parent = Tab
-            Slider.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Slider.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Slider.Position = UDim2.new(-0.48035714, 0, -0.570532918, 0)
-            Slider.Size = UDim2.new(0, 363, 0, 60)
+            Slider.Size = UDim2.new(0, 379, 0, 60)
             Slider.AutoButtonColor = false
             Slider.Font = Enum.Font.SourceSans
             Slider.Text = ""
@@ -826,10 +814,10 @@ function lib:Window(text, preset, closebind)
 
             Dropdown.Name = "Dropdown"
             Dropdown.Parent = Tab
-            Dropdown.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Dropdown.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
             Dropdown.ClipsDescendants = true
             Dropdown.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
-            Dropdown.Size = UDim2.new(0, 363, 0, 42)
+            Dropdown.Size = UDim2.new(0, 379, 0, 42)
 
             DropdownCorner.CornerRadius = UDim.new(0, 5)
             DropdownCorner.Name = "DropdownCorner"
@@ -839,7 +827,7 @@ function lib:Window(text, preset, closebind)
             DropdownBtn.Parent = Dropdown
             DropdownBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             DropdownBtn.BackgroundTransparency = 1.000
-            DropdownBtn.Size = UDim2.new(0, 363, 0, 42)
+            DropdownBtn.Size = UDim2.new(0, 379, 0, 42)
             DropdownBtn.Font = Enum.Font.SourceSans
             DropdownBtn.Text = ""
             DropdownBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -861,7 +849,7 @@ function lib:Window(text, preset, closebind)
             ArrowImg.Parent = DropdownTitle
             ArrowImg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             ArrowImg.BackgroundTransparency = 1.000
-            ArrowImg.Position = UDim2.new(1.65240645, 0, 0.190476194, 0)
+            ArrowImg.Position = UDim2.new(1.8, 0, 0.190476194, 0)
             ArrowImg.Size = UDim2.new(0, 26, 0, 26)
             ArrowImg.Image = "http://www.roblox.com/asset/?id=6034818375"
 
@@ -884,7 +872,7 @@ function lib:Window(text, preset, closebind)
                 function()
                     if droptog == false then
                         Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 55 + framesize),
+                            UDim2.new(0, 379, 0, 42 + framesize),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -893,13 +881,13 @@ function lib:Window(text, preset, closebind)
                         TweenService:Create(
                             ArrowImg,
                             TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
-                            {Rotation = 270}
+                            {Rotation = -90}
                         ):Play()
                         wait(.2)
                         Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
                     else
                         Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 42),
+                            UDim2.new(0, 379, 0, 42),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -967,7 +955,7 @@ function lib:Window(text, preset, closebind)
                         DropdownTitle.Text = text .. " - " .. v
                         pcall(callback, v)
                         Dropdown:TweenSize(
-                            UDim2.new(0, 363, 0, 42),
+                            UDim2.new(0, 379, 0, 42),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -1041,7 +1029,7 @@ function lib:Window(text, preset, closebind)
             Colorpicker.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
             Colorpicker.ClipsDescendants = true
             Colorpicker.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
-            Colorpicker.Size = UDim2.new(0, 363, 0, 42)
+            Colorpicker.Size = UDim2.new(0, 379, 0, 42)
 
             ColorpickerCorner.CornerRadius = UDim.new(0, 5)
             ColorpickerCorner.Name = "ColorpickerCorner"
@@ -1071,7 +1059,7 @@ function lib:Window(text, preset, closebind)
 
             ConfirmBtn.Name = "ConfirmBtn"
             ConfirmBtn.Parent = ColorpickerTitle
-            ConfirmBtn.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            ConfirmBtn.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             ConfirmBtn.Position = UDim2.new(1.25814295, 0, 1.09037197, 0)
             ConfirmBtn.Size = UDim2.new(0, 105, 0, 32)
             ConfirmBtn.AutoButtonColor = false
@@ -1107,7 +1095,7 @@ function lib:Window(text, preset, closebind)
 
             RainbowToggle.Name = "RainbowToggle"
             RainbowToggle.Parent = ColorpickerTitle
-            RainbowToggle.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            RainbowToggle.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             RainbowToggle.Position = UDim2.new(1.26349044, 0, 2.12684202, 0)
             RainbowToggle.Size = UDim2.new(0, 104, 0, 32)
             RainbowToggle.AutoButtonColor = false
@@ -1142,7 +1130,7 @@ function lib:Window(text, preset, closebind)
 
             FrameRainbowToggle2.Name = "FrameRainbowToggle2"
             FrameRainbowToggle2.Parent = FrameRainbowToggle1
-            FrameRainbowToggle2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            FrameRainbowToggle2.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             FrameRainbowToggle2.Position = UDim2.new(0.0590000004, 0, 0.112999998, 0)
             FrameRainbowToggle2.Size = UDim2.new(0, 33, 0, 14)
 
@@ -1151,7 +1139,7 @@ function lib:Window(text, preset, closebind)
 
             FrameRainbowToggle3.Name = "FrameRainbowToggle3"
             FrameRainbowToggle3.Parent = FrameRainbowToggle1
-            FrameRainbowToggle3.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            FrameRainbowToggle3.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
             FrameRainbowToggle3.BackgroundTransparency = 1.000
             FrameRainbowToggle3.Size = UDim2.new(0, 37, 0, 18)
 
@@ -1238,7 +1226,7 @@ function lib:Window(text, preset, closebind)
                         ColorSelection.Visible = true
                         HueSelection.Visible = true
                         Colorpicker:TweenSize(
-                            UDim2.new(0, 363, 0, 132),
+                            UDim2.new(0, 379, 0, 132),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -1495,8 +1483,8 @@ function lib:Window(text, preset, closebind)
 
             Label.Name = "Button"
             Label.Parent = Tab
-            Label.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-            Label.Size = UDim2.new(0, 363, 0, 42)
+            Label.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+            Label.Size = UDim2.new(0, 379, 0, 42)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.SourceSans
             Label.Text = ""
@@ -1542,7 +1530,7 @@ function lib:Window(text, preset, closebind)
             Textbox.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
             Textbox.ClipsDescendants = true
             Textbox.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
-            Textbox.Size = UDim2.new(0, 363, 0, 42)
+            Textbox.Size = UDim2.new(0, 379, 0, 42)
 
             TextboxCorner.CornerRadius = UDim.new(0, 5)
             TextboxCorner.Name = "TextboxCorner"
