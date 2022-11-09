@@ -64,3 +64,8 @@ end)
 ```lua
 Tab_1:Label('This is a Label!')
 ```
+
+## Make a Notification
+```lua
+lib:Notification("Success", "Clicked!", "Close")
+```
