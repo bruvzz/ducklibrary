@@ -1131,6 +1131,7 @@ function lib:Window(text, preset, closebind)
 
             FrameRainbowToggle1Corner.Name = "FrameRainbowToggle1Corner"
             FrameRainbowToggle1Corner.Parent = FrameRainbowToggle1
+            FrameRainbowToggle1Corner.CornerRadius = UDim.new(0, 4)
 
             FrameRainbowToggle2.Name = "FrameRainbowToggle2"
             FrameRainbowToggle2.Parent = FrameRainbowToggle1
@@ -1140,6 +1141,7 @@ function lib:Window(text, preset, closebind)
 
             FrameRainbowToggle2_2.Name = "FrameRainbowToggle2"
             FrameRainbowToggle2_2.Parent = FrameRainbowToggle2
+            FrameRainbowToggle2_2.CornerRadius = UDim.new(0, 4)
 
             FrameRainbowToggle3.Name = "FrameRainbowToggle3"
             FrameRainbowToggle3.Parent = FrameRainbowToggle1
@@ -1149,15 +1151,17 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle3.Name = "FrameToggle3"
             FrameToggle3.Parent = FrameRainbowToggle3
+            FrameToggle3.CornerRadius = UDim.new(0, 4)
 
             FrameRainbowToggleCircle.Name = "FrameRainbowToggleCircle"
             FrameRainbowToggleCircle.Parent = FrameRainbowToggle1
             FrameRainbowToggleCircle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-            FrameRainbowToggleCircle.Position = UDim2.new(0.127000004, 0, 0.222000003, 0)
-            FrameRainbowToggleCircle.Size = UDim2.new(0, 10, 0, 10)
+            FrameRainbowToggleCircle.Position = UDim2.new(-0.4, 0, -0.3, 0)
+            FrameRainbowToggleCircle.Size = UDim2.new(0, 25, 0, 25)
 
             FrameRainbowToggleCircleCorner.Name = "FrameRainbowToggleCircleCorner"
             FrameRainbowToggleCircleCorner.Parent = FrameRainbowToggleCircle
+            FrameRainbowToggleCircleCorner.CornerRadius = UDim.new(0, 4)
 
             Color.Name = "Color"
             Color.Parent = ColorpickerTitle
@@ -1388,11 +1392,11 @@ function lib:Window(text, preset, closebind)
                         ):Play()
                         TweenService:Create(
                             FrameRainbowToggleCircle,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
                             {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}
                         ):Play()
                         FrameRainbowToggleCircle:TweenPosition(
-                            UDim2.new(0.587, 0, 0.222000003, 0),
+                            UDim2.new(0.7, 0, -0.3, 0),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -1432,11 +1436,11 @@ function lib:Window(text, preset, closebind)
                         ):Play()
                         TweenService:Create(
                             FrameRainbowToggleCircle,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
                             {BackgroundColor3 = Color3.fromRGB(50, 50, 50)}
                         ):Play()
                         FrameRainbowToggleCircle:TweenPosition(
-                            UDim2.new(0.127000004, 0, 0.222000003, 0),
+                            UDim2.new(-0.4, 0, -0.3, 0),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
