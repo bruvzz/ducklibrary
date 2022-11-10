@@ -1064,6 +1064,7 @@ function lib:Window(text, preset, closebind)
             ConfirmBtn.Name = "ConfirmBtn"
             ConfirmBtn.Parent = ColorpickerTitle
             ConfirmBtn.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            ConfirmBtn.BackgroundTransparency = 1.000
             ConfirmBtn.Position = UDim2.new(1.25814295, 0, 1.09037197, 0)
             ConfirmBtn.Size = UDim2.new(0, 105, 0, 32)
             ConfirmBtn.AutoButtonColor = false
@@ -1100,6 +1101,7 @@ function lib:Window(text, preset, closebind)
             RainbowToggle.Name = "RainbowToggle"
             RainbowToggle.Parent = ColorpickerTitle
             RainbowToggle.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+            RainbowToggle.BackgroundTransparency = 1.000
             RainbowToggle.Position = UDim2.new(1.26349044, 0, 2.12684202, 0)
             RainbowToggle.Size = UDim2.new(0, 104, 0, 32)
             RainbowToggle.AutoButtonColor = false
@@ -1126,7 +1128,7 @@ function lib:Window(text, preset, closebind)
             FrameRainbowToggle1.Name = "FrameRainbowToggle1"
             FrameRainbowToggle1.Parent = RainbowToggle
             FrameRainbowToggle1.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-            FrameRainbowToggle1.Position = UDim2.new(0.649999976, 0, 0.186000004, 0)
+            FrameRainbowToggle1.Position = UDim2.new(0.819, 0, 0.428, 0)
             FrameRainbowToggle1.Size = UDim2.new(0, 37, 0, 18)
 
             FrameRainbowToggle1Corner.Name = "FrameRainbowToggle1Corner"
@@ -1463,7 +1465,7 @@ function lib:Window(text, preset, closebind)
                     ColorSelection.Visible = false
                     HueSelection.Visible = false
                     Colorpicker:TweenSize(
-                        UDim2.new(0, 363, 0, 42),
+                        UDim2.new(0, 379, 0, 42),
                         Enum.EasingDirection.Out,
                         Enum.EasingStyle.Quart,
                         .2,
