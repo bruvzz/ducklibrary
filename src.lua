@@ -510,6 +510,7 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle1Corner.Name = "FrameToggle1Corner"
             FrameToggle1Corner.Parent = FrameToggle1
+            FrameToggle1Corner.CornerRadius = UDim.new(0, 4)
 
             FrameToggle2.Name = "FrameToggle2"
             FrameToggle2.Parent = FrameToggle1
@@ -519,6 +520,7 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle2Corner.Name = "FrameToggle2Corner"
             FrameToggle2Corner.Parent = FrameToggle2
+            FrameToggle2Corner.CornerRadius = UDim.new(0, 4)
 
             FrameToggle3.Name = "FrameToggle3"
             FrameToggle3.Parent = FrameToggle1
@@ -528,15 +530,17 @@ function lib:Window(text, preset, closebind)
 
             FrameToggle3Corner.Name = "FrameToggle3Corner"
             FrameToggle3Corner.Parent = FrameToggle3
+            FrameToggle3Corner.CornerRadius = UDim.new(0, 4)
 
             FrameToggleCircle.Name = "FrameToggleCircle"
             FrameToggleCircle.Parent = FrameToggle1
             FrameToggleCircle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-            FrameToggleCircle.Position = UDim2.new(0.127000004, 0, 0.222000003, 0)
-            FrameToggleCircle.Size = UDim2.new(0, 10, 0, 10)
+            FrameToggleCircle.Position = UDim2.new(-0.4, 0, -0.3, 0)
+            FrameToggleCircle.Size = UDim2.new(0, 25, 0, 25)
 
             FrameToggleCircleCorner.Name = "FrameToggleCircleCorner"
             FrameToggleCircleCorner.Parent = FrameToggleCircle
+            FrameToggleCircleCorner.CornerRadius = UDim.new(0, 4)
 
             coroutine.wrap(
                 function()
@@ -571,11 +575,11 @@ function lib:Window(text, preset, closebind)
                         ):Play()
                         TweenService:Create(
                             FrameToggleCircle,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
                             {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}
                         ):Play()
                         FrameToggleCircle:TweenPosition(
-                            UDim2.new(0.587, 0, 0.222000003, 0),
+                            UDim2.new(0.7, 0, -0.3, 0),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -604,11 +608,11 @@ function lib:Window(text, preset, closebind)
                         ):Play()
                         TweenService:Create(
                             FrameToggleCircle,
-                            TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                            TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
                             {BackgroundColor3 = Color3.fromRGB(50, 50, 50)}
                         ):Play()
                         FrameToggleCircle:TweenPosition(
-                            UDim2.new(0.127000004, 0, 0.222000003, 0),
+                            UDim2.new(-0.4, 0, -0.3, 0),
                             Enum.EasingDirection.Out,
                             Enum.EasingStyle.Quart,
                             .2,
@@ -643,11 +647,11 @@ function lib:Window(text, preset, closebind)
                 ):Play()
                 TweenService:Create(
                     FrameToggleCircle,
-                    TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                    TweenInfo.new(.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
                     {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}
                 ):Play()
                 FrameToggleCircle:TweenPosition(
-                    UDim2.new(0.587, 0, 0.222000003, 0),
+                    UDim2.new(-0.4, 0, -0.3, 0),
                     Enum.EasingDirection.Out,
                     Enum.EasingStyle.Quart,
                     .2,
