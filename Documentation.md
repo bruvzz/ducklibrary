@@ -55,7 +55,7 @@ end)
 
 ## Create a Textbox
 ```lua
-maintab:Textbox("This is a Textbox!", false, function(value)
+Tab_1:Textbox("This is a Textbox!", false, function(value)
 
 print(value)
     
