@@ -53,6 +53,15 @@ Tab_1:Dropdown("This is a Dropdown!", {"test 1", "test 2", "test 3", "test 4"}, 
 end)
 ```
 
+## Create a Textbox
+```lua
+maintab:Textbox("This is a Textbox!", false, function(value)
+
+print(value)
+    
+end)
+```
+
 ## Create a Colorpicker
 ```lua
 Tab_1:Colorpicker("Change UI Color",Color3.fromRGB(44, 120, 224), function(t)
