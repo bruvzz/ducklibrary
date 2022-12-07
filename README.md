@@ -12,7 +12,7 @@
 
 > `>` Library inspired by Vape Lib
 
-- This library is inspired by developer [dawid#7205](https://raw.githubusercontent.com/dawid-scripts). You can check out his other content and repositories by simply clicking his usertag!
+- This library is inspired by developer [dawid#7205](https://github.com/dawid-scripts). You can check out his other content and repositories by simply clicking his usertag!
 
 
 > Made with ❤️ by `Ducky#3566`
