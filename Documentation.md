@@ -9,7 +9,7 @@ local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/bruvzz/duc
 ## Creating a Window
 ```lua
 local Win = lib:Window("Your Title Here", Color3.fromRGB(44, 120, 224), Enum.KeyCode) -- (text, color, Enum.KeyCode) --
--- If you would like to have a Rainbow Title, put 'PresetColor' in between the set of parenthesis --
+-- Please keep "Enum.KeyCode" as stated or else library could break. --
 ```
 
 ## Creating a Tab
