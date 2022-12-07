@@ -8,6 +8,8 @@
 
 - If you would like, the source can be found [here](https://github.com/bruvzz/ducklibrary/blob/main/src.lua). You can change this also to however and whenever you feel like it.
 
+- If you also want a brief documentation on how to use the library in action, please click [here](https://github.com/bruvzz/ducklibrary/blob/main/Documentation.md).
+
 > `>` Library inspired by Vape Lib
 
 - This library is inspired by developer [dawid#7205](https://raw.githubusercontent.com/dawid-scripts). You can check out his other content and repositories by simply clicking his usertag!
