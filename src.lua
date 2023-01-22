@@ -104,8 +104,9 @@ function lib:Window(text, preset, closebind)
     Main.Parent = ui
     Main.AnchorPoint = Vector2.new(0.5, 0.5)
     Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    Main.BackgroundTransparency = 1.000
     Main.BorderSizePixel = 0
-    Main.Position = UDim2.new(0.5, 0, 0, 0)
+    Main.Position = UDim2.new(0.5, 0, 0.5, 0)
     Main.Size = UDim2.new(0, 547, 0, 391)
     Main.ClipsDescendants = true
     Main.Visible = true
@@ -155,6 +156,7 @@ function lib:Window(text, preset, closebind)
     CloseBtn.Name = "CloseBtn"
     CloseBtn.Parent = DragFrame
     CloseBtn.BackgroundTransparency = 1.000
+    CloseBtn.ImageColor3 = Color3.fromRGB(60, 60, 60)
     CloseBtn.Position = UDim2.new(0.939, 0, 0.103, 0)
     CloseBtn.Size = UDim2.new(0, 25, 0, 25)
     CloseBtn.ZIndex = 2
@@ -166,6 +168,7 @@ function lib:Window(text, preset, closebind)
     MinimizeBtn.Name = "MinimizeBtn"
     MinimizeBtn.Parent = DragFrame
     MinimizeBtn.BackgroundTransparency = 1.000
+    MinimizeBtn.ImageColor3 = Color3.fromRGB(60, 60, 60)
     MinimizeBtn.Position = UDim2.new(0.88, 0, 0.103, 0)
     MinimizeBtn.Size = UDim2.new(0, 25, 0, 25)
     MinimizeBtn.ZIndex = 2
@@ -174,7 +177,62 @@ function lib:Window(text, preset, closebind)
     MinimizeBtn.ClipsDescendants = false
     MinimizeBtn.Image = "rbxassetid://3926307971"
 
-    Main:TweenPosition(UDim2.new(0.5, 0, 0.5, 0), "Out", "Quint", 1, true)
+    CloseBtn.MouseEnter:Connect(
+        function()
+            TweenService:Create(
+                CloseBtn,
+                TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {ImageColor3 = Color3.fromRGB(255, 255, 255)}
+            ):Play()
+        end
+    )
+
+    CloseBtn.MouseLeave:Connect(
+        function()
+            TweenService:Create(
+                CloseBtn,
+                TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {ImageColor3 = Color3.fromRGB(60, 60, 60)}
+            ):Play()
+        end
+    )
+
+    MinimizeBtn.MouseEnter:Connect(
+        function()
+            TweenService:Create(
+                MinimizeBtn,
+                TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {ImageColor3 = Color3.fromRGB(255, 255, 255)}
+            ):Play()
+        end
+    )
+
+    MinimizeBtn.MouseLeave:Connect(
+        function()
+            TweenService:Create(
+                MinimizeBtn,
+                TweenInfo.new(.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+                {ImageColor3 = Color3.fromRGB(60, 60, 60)}
+            ):Play()
+        end
+    )
+
+    local MainAnimation = TweenInfo.new(
+        0.2,
+        Enum.EasingStyle.Sine,
+        Enum.EasingDirection.In,
+        0,
+        false,
+        0
+    )
+
+    local MainProps = {}
+
+    MainProps.BackgroundTransparency = 0
+    MainProps.Position = UDim2.new(0.5, 0, 0.5, 0)
+
+    local TweenPlay1 = TweenService:Create(Main, MainAnimation, MainProps)
+    TweenPlay1:Play()
 
     MakeDraggable(DragFrame, Main)
 
@@ -233,19 +291,54 @@ function lib:Window(text, preset, closebind)
 
     function lib:Notification(texttitle, textdesc, textbtn)
         local NotificationFrame = Instance.new("Frame")
+        local NotificationFrameCorner = Instance.new("UICorner")
         local OkayBtn = Instance.new("ImageButton")
         local NotificationTitle = Instance.new("TextLabel")
         local NotificationDesc = Instance.new("TextLabel")
+        local NotificationIndicator = Instance.new("Frame")
+        local NotificationIndicatorCorner = Instance.new("UICorner")
 
         NotificationFrame.Name = "NotificationFrame"
         NotificationFrame.Parent = ui
         NotificationFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+        NotificationFrame.BackgroundTransparency = 1.000
         NotificationFrame.BorderSizePixel = 0
         NotificationFrame.ClipsDescendants = true
-        NotificationFrame.Position = UDim2.new(0.841, 0, 2, 0)
-        NotificationFrame.Size = UDim2.new(0, 306, 0, 130)
+        NotificationFrame.Position = UDim2.new(0.83, 0, 0.932, 0)
+        NotificationFrame.Size = UDim2.new(0, 306, 0, 48)
 
-        NotificationFrame:TweenPosition(UDim2.new(0.840, 0, 0.875, 0), "Out", "Sine", .3, true)
+        NotificationFrameCorner.CornerRadius = UDim.new(0, 4)
+        NotificationFrameCorner.Name = "NotificationFrameCorner"
+        NotificationFrameCorner.Parent = NotificationFrame
+
+        NotificationIndicator.Name = "NotificationIndicator"
+        NotificationIndicator.Parent = NotificationFrame
+        NotificationIndicator.BackgroundColor3 = PresetColor
+        NotificationIndicator.BorderSizePixel = 0
+        NotificationIndicator.ClipsDescendants = true
+        NotificationIndicator.Position = UDim2.new(0, 0, 0, 0)
+        NotificationIndicator.Size = UDim2.new(0, 6, 0, 48)
+
+        NotificationIndicatorCorner.CornerRadius = UDim.new(0, 4)
+        NotificationIndicatorCorner.Name = "NotificationIndicatorCorner"
+        NotificationIndicatorCorner.Parent = NotificationIndicator
+
+        local NotificationFrameAnimation = TweenInfo.new(
+            0.2,
+            Enum.EasingStyle.Sine,
+            Enum.EasingDirection.In,
+            0,
+            false,
+            0
+        )
+
+        local NotificationFrameProps = {}
+
+        NotificationFrameProps.BackgroundTransparency = 0
+        NotificationFrameProps.Position = UDim2.new(0.83, 0, 0.932, 0)
+
+        local TweenPlayNoti = TweenService:Create(NotificationFrame, NotificationFrameAnimation, NotificationFrameProps)
+        TweenPlayNoti:Play()
 
         OkayBtn.Name = "OkayBtn"
         OkayBtn.Parent = NotificationFrame
@@ -275,7 +368,7 @@ function lib:Window(text, preset, closebind)
         NotificationDesc.Parent = NotificationFrame
         NotificationDesc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         NotificationDesc.BackgroundTransparency = 1.000
-        NotificationDesc.Position = UDim2.new(0.059, 0, 0.308, 0)
+        NotificationDesc.Position = UDim2.new(0.046, 0, 0.514, 0)
         NotificationDesc.Size = UDim2.new(0, 278, 0, 83)
         NotificationDesc.Font = Enum.Font.Gotham
         NotificationDesc.Text = textdesc
@@ -287,6 +380,43 @@ function lib:Window(text, preset, closebind)
 
         OkayBtn.MouseButton1Click:Connect(
             function()
+                
+            local NotificationFrameAnimation2 = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local NotificationFrameProps2 = {}
+
+            NotificationFrameProps2.BackgroundTransparency = 0.5
+
+            local TweenPlayNoti2 = TweenService:Create(NotificationFrame, NotificationFrameAnimation2, NotificationFrameProps2)
+            TweenPlayNoti2:Play()
+
+            wait(1)
+
+            local NotificationFrameAnimation3 = TweenInfo.new(
+                0.5,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local NotificationFrameProps3 = {}
+
+            NotificationFrameProps3.Position = UDim2.new(1.83, 0, 0.932, 0)
+
+            local TweenPlayNoti3 = TweenService:Create(NotificationFrame, NotificationFrameAnimation3, NotificationFrameProps3)
+            TweenPlayNoti3:Play()
+
+            wait(1)
+                
                 NotificationFrame:Destroy()
             end
         )
@@ -312,7 +442,7 @@ function lib:Window(text, preset, closebind)
         TabTitle.Name = "TabTitle"
         TabTitle.Parent = TabBtn
         TabTitle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-        TabTitle.BackgroundTransparency = 0
+        TabTitle.BackgroundTransparency = 1.000
         TabTitle.Size = UDim2.new(0, 107, 0, 21)
         TabTitle.Position = UDim2.new(0.154, 0, 0.216, 0)
         TabTitle.Font = Enum.Font.Gotham
@@ -350,6 +480,23 @@ function lib:Window(text, preset, closebind)
             TabTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
             Tab.Visible = true
         end
+
+        local ButtonAnimation = TweenInfo.new(
+            0.2,
+            Enum.EasingStyle.Sine,
+            Enum.EasingDirection.In,
+            0,
+            false,
+            0
+        )
+
+        local ButtonProps = {}
+
+        ButtonProps.BackgroundTransparency = 0
+        ButtonProps.Position = UDim2.new(0.154, 0, 0.216, 0)
+
+        local TweenPlay2 = TweenService:Create(TabTitle, ButtonAnimation, ButtonProps)
+        TweenPlay2:Play()
 
         TabBtn.MouseButton1Click:Connect(
             function()
@@ -401,6 +548,7 @@ function lib:Window(text, preset, closebind)
             Button.Name = "Button"
             Button.Parent = Tab
             Button.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+            Button.BackgroundTransparency = 1.000
             Button.Size = UDim2.new(0, 379, 0, 42)
             Button.AutoButtonColor = false
             Button.Font = Enum.Font.SourceSans
@@ -424,6 +572,22 @@ function lib:Window(text, preset, closebind)
             ButtonTitle.TextSize = 14.000
             ButtonTitle.TextXAlignment = Enum.TextXAlignment.Left
 
+            local Button2Animation = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local Button2Props = {}
+
+            Button2Props.BackgroundTransparency = 0
+
+            local TweenPlay3 = TweenService:Create(Button, Button2Animation, Button2Props)
+            TweenPlay3:Play()
+            
             Button.MouseEnter:Connect(
                 function()
                     TweenService:Create(
@@ -478,6 +642,7 @@ function lib:Window(text, preset, closebind)
             Toggle.Name = "Toggle"
             Toggle.Parent = Tab
             Toggle.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+            Toggle.BackgroundTransparency = 1.000
             Toggle.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
             Toggle.Size = UDim2.new(0, 379, 0, 42)
             Toggle.AutoButtonColor = false
@@ -541,6 +706,23 @@ function lib:Window(text, preset, closebind)
             FrameToggleCircleCorner.Name = "FrameToggleCircleCorner"
             FrameToggleCircleCorner.Parent = FrameToggleCircle
             FrameToggleCircleCorner.CornerRadius = UDim.new(0, 4)
+
+            local ToggleAnimation = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local ToggleProps = {}
+
+            ToggleProps.BackgroundTransparency = 0
+            ToggleProps.Position = UDim2.new(0.215625003, 0, 0.446271926, 0)
+
+            local TweenPlay4 = TweenService:Create(Toggle, ToggleAnimation, ToggleProps)
+            TweenPlay4:Play()
 
             coroutine.wrap(
                 function()
@@ -683,6 +865,7 @@ function lib:Window(text, preset, closebind)
             Slider.Name = "Slider"
             Slider.Parent = Tab
             Slider.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+            Slider.BackgroundTransparency = 1.000
             Slider.Position = UDim2.new(-0.48035714, 0, -0.570532918, 0)
             Slider.Size = UDim2.new(0, 379, 0, 60)
             Slider.AutoButtonColor = false
@@ -740,6 +923,23 @@ function lib:Window(text, preset, closebind)
             SlideCircle.Size = UDim2.new(0, 11, 0, 11)
             SlideCircle.Image = "rbxassetid://3570695787"
             SlideCircle.ImageColor3 = PresetColor
+
+            local SliderAnimation = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local SliderProps = {}
+
+            SliderProps.BackgroundTransparency = 0
+            SliderProps.Position = UDim2.new(-0.48035714, 0, -0.570532918, 0)
+
+            local TweenPlay5 = TweenService:Create(Slider, SliderAnimation, SliderProps)
+            TweenPlay5:Play()
 
             coroutine.wrap(
                 function()
@@ -819,6 +1019,7 @@ function lib:Window(text, preset, closebind)
             Dropdown.Name = "Dropdown"
             Dropdown.Parent = Tab
             Dropdown.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+            Dropdown.BackgroundTransparency = 1.000
             Dropdown.ClipsDescendants = true
             Dropdown.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Dropdown.Size = UDim2.new(0, 379, 0, 42)
@@ -871,6 +1072,23 @@ function lib:Window(text, preset, closebind)
             DropLayout.Name = "DropLayout"
             DropLayout.Parent = DropItemHolder
             DropLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+            local DropdownAnimation = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local DropdownProps = {}
+
+            DropdownProps.BackgroundTransparency = 0
+            DropdownProps.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
+
+            local TweenPlay6 = TweenService:Create(Dropdown, DropdownAnimation, DropdownProps)
+            TweenPlay6:Play()
 
             DropdownBtn.MouseButton1Click:Connect(
                 function()
@@ -1028,6 +1246,7 @@ function lib:Window(text, preset, closebind)
             Colorpicker.Name = "Colorpicker"
             Colorpicker.Parent = Tab
             Colorpicker.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Colorpicker.BackgroundTransparency = 1.000
             Colorpicker.ClipsDescendants = true
             Colorpicker.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Colorpicker.Size = UDim2.new(0, 379, 0, 42)
@@ -1191,6 +1410,23 @@ function lib:Window(text, preset, closebind)
             HueSelection.Size = UDim2.new(0, 18, 0, 18)
             HueSelection.Image = "http://www.roblox.com/asset/?id=4805639000"
             HueSelection.Visible = false
+
+            local ColorpickerAnimation = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local ColorpickerProps = {}
+
+            ColorpickerProps.BackgroundTransparency = 0
+            ColorpickerProps.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
+
+            local TweenPlay7 = TweenService:Create(Colorpicker, ColorpickerAnimation, ColorpickerProps)
+            TweenPlay7:Play()
 
             coroutine.wrap(
                 function()
@@ -1448,6 +1684,7 @@ function lib:Window(text, preset, closebind)
             Label.Name = "Button"
             Label.Parent = Tab
             Label.BackgroundColor3 = Color3.fromRGB(33, 33, 33)
+            Label.BackgroundTransparency = 1.000
             Label.Size = UDim2.new(0, 379, 0, 42)
             Label.AutoButtonColor = false
             Label.Font = Enum.Font.SourceSans
@@ -1471,6 +1708,22 @@ function lib:Window(text, preset, closebind)
             LabelTitle.TextSize = 14.000
             LabelTitle.TextXAlignment = Enum.TextXAlignment.Left
 
+            local LabelAnimation = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local LabelProps = {}
+
+            LabelProps.BackgroundTransparency = 0
+
+            local TweenPlay8 = TweenService:Create(Label, LabelAnimation, LabelProps)
+            TweenPlay8:Play()
+
             MinimizeBtn.MouseButton1Click:Connect(function()
                 if Label.Visible == true then
                     Label.Visible = false
@@ -1492,6 +1745,7 @@ function lib:Window(text, preset, closebind)
             Textbox.Name = "Textbox"
             Textbox.Parent = Tab
             Textbox.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            Textbox.BackgroundTransparency = 1.000
             Textbox.ClipsDescendants = true
             Textbox.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
             Textbox.Size = UDim2.new(0, 379, 0, 42)
@@ -1530,6 +1784,23 @@ function lib:Window(text, preset, closebind)
             TextBox.Text = ""
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.TextSize = 14.000
+
+            local TextboxAnimation = TweenInfo.new(
+                0.2,
+                Enum.EasingStyle.Sine,
+                Enum.EasingDirection.In,
+                0,
+                false,
+                0
+            )
+
+            local TextboxProps = {}
+
+            TextboxProps.BackgroundTransparency = 0
+            TextboxProps.Position = UDim2.new(-0.541071415, 0, -0.532915354, 0)
+
+            local TweenPlay9 = TweenService:Create(Textbox, TextboxAnimation, TextboxProps)
+            TweenPlay9:Play()
 
             TextBox.FocusLost:Connect(
                 function(ep)
