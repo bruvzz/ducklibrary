@@ -17,4 +17,4 @@
 
 > Made with ❤️ by `Ducky#3566`
 
-![alt text](https://i.imgur.com/z1CUdgv.png)
+![Thread](https://i.imgur.com/z1CUdgv.png)
